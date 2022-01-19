@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "0db2deab-c475-40d9-8b60-1f74dd70dade",
+		"name": "smart-parcel-locker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "clients",
+			"item": [
+				{
+					"name": "clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/clients/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clients/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/clients/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clients",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"email\": \"monjay@gmail.com\",\r\n    \"name\": \"Mon jay Malbog\",\r\n    \"barcode\": \"123\",\r\n    \"qrcode\": \"123\",\r\n    \"status\": {\r\n        \"id\": 1,\r\n        \"name\": \"ENABLED\",\r\n        \"value\": \"1\",\r\n        \"code\": \"ENABLED\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"email\": \"rhalfcaacbay@gmail.com\",\r\n    \"name\": \"Rhalf Wendel Caacbay\",\r\n    \"barcode\": \"123\",\r\n    \"qrcode\": \"123\",\r\n    \"status\": {\r\n        \"id\": 1,\r\n        \"name\": \"ENABLED\",\r\n        \"value\": \"1\",\r\n        \"code\": \"ENABLED\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/v1/clients/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clients/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/clients/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"clients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "status",
+			"item": [
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/status/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"status",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/transactions/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"transactions",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "couriers",
+			"item": [
+				{
+					"name": "couriers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/couriers/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"couriers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lockers",
+			"item": [
+				{
+					"name": "lockers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/lockers/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"lockers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "parcels",
+			"item": [
+				{
+					"name": "parcels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/parcels/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"parcels",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sizes",
+			"item": [
+				{
+					"name": "sizes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/sizes/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"sizes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/v1/companies/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"v1",
+								"companies",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}
