@@ -21,17 +21,17 @@ import lombok.NoArgsConstructor;
 public class Locker {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 
 	private Integer value;
 
-	private Boolean door;
-
-	private Boolean load;
-
 	@OneToOne
     @JoinColumn(name = "size_id")
 	private Size size;
+	
+	@OneToOne
+    @JoinColumn(name = "parcel_id")
+	private Parcel parcel;
 }

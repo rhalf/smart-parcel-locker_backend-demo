@@ -39,4 +39,16 @@ public class ParcelService {
 		parcelRepository.deleteById(id);
 		return "success";
 	}
+	
+	public Object findFirstByBarcode(String barcode) {
+		return parcelRepository.findFirstByBarcode(barcode);
+	}
+	
+	public Object findFirstByQrcode(String qrcode) {
+		return parcelRepository.findFirstByQrcode(qrcode);
+	}
+	
+	public Object findFirstByNameContaining(String name) {
+		return parcelRepository.findFirstByNameContaining(name);
+	}
 }

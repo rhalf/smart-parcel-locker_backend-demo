@@ -24,7 +24,7 @@ public class StatusController implements LoggerUtil {
 	@Autowired
 	 private StatusService statusService;
 	
-	@GetMapping("/status/")
+	@GetMapping("/statuses/")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> getStatuses() {
 		return ResponseEntity.ok(statusService.getAll());

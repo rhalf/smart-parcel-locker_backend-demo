@@ -30,25 +30,25 @@ public class SizeController implements LoggerUtil {
 		return ResponseEntity.ok(sizeService.getAll());
 	}
 	
-	@GetMapping("/sizes/{id}")
+	@GetMapping("/size/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> getSize(@PathVariable int id) {
 		return ResponseEntity.ok(sizeService.getById(id));
 	}
 	
-	@PostMapping("/sizes")
+	@PostMapping("/size")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> setSize(@RequestBody Size size) {
 		return ResponseEntity.ok(sizeService.save(size));
 	}
 	
-	@PutMapping("/sizes/{id}")
+	@PutMapping("/size/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> putSize(@PathVariable int id, @RequestBody Size size) {
 		return ResponseEntity.ok(sizeService.updateById(id, size));
 	}
 	
-	@DeleteMapping("/sizes/{id}")
+	@DeleteMapping("/size/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> deleteSize(@PathVariable int id) {
 		return ResponseEntity.ok(sizeService.deleteById(id));

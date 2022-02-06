@@ -39,5 +39,17 @@ public class ClientService {
 		clientRepository.deleteById(id);
 		return "success";
 	}
+	
+	public Object findFirstByBarcode(String barcode) {
+		return clientRepository.findFirstByBarcode(barcode);
+	}
+	
+	public Object findFirstByQrcode(String qrcode) {
+		return clientRepository.findFirstByQrcode(qrcode);
+	}
+	
+	public Object findFirstByNameContaining(String name) {
+		return clientRepository.findFirstByNameContaining(name);
+	}
 
 }

@@ -30,25 +30,25 @@ public class TransactionController implements LoggerUtil {
 		return ResponseEntity.ok(transactionService.getAll());
 	}
 	
-	@GetMapping("/transactions/{id}")
+	@GetMapping("/transaction/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> getTransaction(@PathVariable int id) {
 		return ResponseEntity.ok(transactionService.getById(id));
 	}
 	
-	@PostMapping("/transactions")
+	@PostMapping("/transaction")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> setTransaction(@RequestBody Transaction transaction) {
 		return ResponseEntity.ok(transactionService.save(transaction));
 	}
 	
-	@PutMapping("/transactions/{id}")
+	@PutMapping("/transaction/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> putTransaction(@PathVariable int id, @RequestBody Transaction transaction) {
 		return ResponseEntity.ok(transactionService.updateById(id, transaction));
 	}
 	
-	@DeleteMapping("/transactions/{id}")
+	@DeleteMapping("/transaction/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> deleteTransaction(@PathVariable int id) {
 		return ResponseEntity.ok(transactionService.deleteById(id));

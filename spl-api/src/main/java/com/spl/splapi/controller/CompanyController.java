@@ -30,25 +30,25 @@ public class CompanyController implements LoggerUtil {
 		return ResponseEntity.ok(companyService.getAll());
 	}
 	
-	@GetMapping("/companies/{id}")
+	@GetMapping("/company/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> getCompany(@PathVariable int id) {
 		return ResponseEntity.ok(companyService.getById(id));
 	}
 	
-	@PostMapping("/companies")
+	@PostMapping("/company")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> setCompany(@RequestBody Company company) {
 		return ResponseEntity.ok(companyService.save(company));
 	}
 	
-	@PutMapping("/companies/{id}")
+	@PutMapping("/company/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> putCompany(@PathVariable int id, @RequestBody Company company) {
 		return ResponseEntity.ok(companyService.updateById(id, company));
 	}
 	
-	@DeleteMapping("/companies/{id}")
+	@DeleteMapping("/company/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Object> deleteCompany(@PathVariable int id) {
 		return ResponseEntity.ok(companyService.deleteById(id));

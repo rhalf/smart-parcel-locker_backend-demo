@@ -12,6 +12,7 @@ import com.spl.splapi.repository.CourierRepository;
 @Service
 public class CourierService {
 
+	
 	@Autowired
 	private CourierRepository courierRepository;
 
@@ -38,5 +39,18 @@ public class CourierService {
 			return null;
 		courierRepository.deleteById(id);
 		return "success";
+	}
+	
+
+	public Object findFirstByBarcode(String barcode) {
+		return courierRepository.findFirstByBarcode(barcode);
+	}
+	
+	public Object findFirstByQrcode(String qrcode) {
+		return courierRepository.findFirstByQrcode(qrcode);
+	}
+	
+	public Object findFirstByNameContaining(String name) {
+		return courierRepository.findFirstByNameContaining(name);
 	}
 }
