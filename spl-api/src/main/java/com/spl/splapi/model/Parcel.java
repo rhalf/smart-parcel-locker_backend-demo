@@ -32,6 +32,10 @@ public class Parcel {
 	private String qrcode;
 
 	@OneToOne
+    @JoinColumn(name = "courier_id")
+	private Courier courier;
+	
+	@OneToOne
     @JoinColumn(name = "client_id")
 	private Client client;
 	

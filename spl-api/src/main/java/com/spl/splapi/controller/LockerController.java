@@ -1,5 +1,7 @@
 package com.spl.splapi.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -53,4 +56,24 @@ public class LockerController implements LoggerUtil {
 	public ResponseEntity<Object> deleteLocker(@PathVariable int id) {
 		return ResponseEntity.ok(lockerService.deleteById(id));
 	}
+	
+	// ====================================================================
+		@GetMapping("/locker")
+		@ResponseStatus(HttpStatus.OK)
+		public ResponseEntity<Object> findOneBy(@RequestParam(required = false) Map<String, String> qparams) {
+
+			String barcode = qparams.getOrDefault("barcode", "");
+			if (!barcode.isBlank() && !barcode.isEmpty())
+				return ResponseEntity.ok(lockerService.findFirstByParcelBarcode(barcode));
+
+			String qrcode = qparams.getOrDefault("qrcode", "");
+			if (!qrcode.isBlank() && !qrcode.isEmpty())
+				return ResponseEntity.ok(lockerService.findFirstByParcelQrcode(qrcode));
+
+			String name = qparams.getOrDefault("name", "");
+			if (!name.isBlank() && !name.isEmpty())
+				return ResponseEntity.ok(lockerService.findFirstByParcelNameContaining(name));
+
+			return null;
+		}
 }

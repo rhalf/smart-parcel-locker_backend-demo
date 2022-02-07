@@ -39,4 +39,16 @@ public class LockerService {
 		lockerRepository.deleteById(id);
 		return "success";
 	}
+	
+	public Object findFirstByParcelBarcode(String barcode) {
+		return lockerRepository.findFirstByParcelBarcode(barcode);
+	}
+	
+	public Object findFirstByParcelQrcode(String qrcode) {
+		return lockerRepository.findFirstByParcelQrcode(qrcode);
+	}
+	
+	public Object findFirstByParcelNameContaining(String name) {
+		return lockerRepository.findFirstByParcelNameContaining(name);
+	}
 }

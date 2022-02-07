@@ -6,4 +6,10 @@ import com.spl.splapi.model.Locker;
 
 public interface LockerRepository extends JpaRepository<Locker, Integer> {
 	
+	Locker findFirstByParcelBarcode(String barcode);
+	
+	Locker findFirstByParcelQrcode(String qrcode);
+	
+	Locker findFirstByParcelNameContaining(String name);
+	
 }

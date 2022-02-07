@@ -24,10 +24,12 @@ public class Transaction {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-
-	@OneToOne
-    @JoinColumn(name = "courier_id")
-	private Courier courier;
+	
+	@Column(name = "type")
+	private String type;
+	
+	@Column(name = "datetime")
+	private String datetime;
 	
 	@OneToOne
     @JoinColumn(name = "parcel_id")
@@ -36,16 +38,5 @@ public class Transaction {
 	@OneToOne
     @JoinColumn(name = "locker_id")
 	private Locker locker;
-	
-	@Column(name = "datetime_withdraw")
-	private String withdraw;
-	
-	@Column(name = "datetime_deposit")
-	private String deposit;
-	
-	@Column(name = "datetime_created")
-	private String created;
-	
-	
 	
 }
